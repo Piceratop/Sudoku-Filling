@@ -34,6 +34,7 @@
   },
   "name":"Sudoku Filling",
   "resources":[
+    {"id":{"name":"ft_number","path":"fonts/ft_number/ft_number.yy",},},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
     {"id":{"name":"roo_game","path":"rooms/roo_game/roo_game.yy",},},
     {"id":{"name":"scr_draw","path":"scripts/scr_draw/scr_draw.yy",},},
