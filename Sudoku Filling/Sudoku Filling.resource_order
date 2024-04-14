@@ -16,5 +16,8 @@
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"fnt_text","order":1,"path":"fonts/fnt_text/fnt_text.yy",},
+    {"name":"scr_position_check","order":1,"path":"scripts/scr_position_check/scr_position_check.yy",},
+  ],
 }

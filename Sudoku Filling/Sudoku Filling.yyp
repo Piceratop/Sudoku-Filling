@@ -8,7 +8,7 @@
     "children":[],
     "name":"Default",
   },
-  "defaultScriptType":0,
+  "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Animation Curves","folderPath":"folders/Animation Curves.yy","name":"Animation Curves","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -34,10 +34,12 @@
   },
   "name":"Sudoku Filling",
   "resources":[
-    {"id":{"name":"ft_number","path":"fonts/ft_number/ft_number.yy",},},
+    {"id":{"name":"fnt_number","path":"fonts/fnt_number/fnt_number.yy",},},
+    {"id":{"name":"fnt_text","path":"fonts/fnt_text/fnt_text.yy",},},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
     {"id":{"name":"roo_game","path":"rooms/roo_game/roo_game.yy",},},
     {"id":{"name":"scr_draw","path":"scripts/scr_draw/scr_draw.yy",},},
+    {"id":{"name":"scr_position_check","path":"scripts/scr_position_check/scr_position_check.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
