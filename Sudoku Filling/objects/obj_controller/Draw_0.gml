@@ -8,7 +8,6 @@ board_top_left = draw_grid_with_values(
 );
 
 // Numpad drawing
-
 numpad_top_left = draw_grid_with_values(
 	numpad_center[0],
 	numpad_center[1],
