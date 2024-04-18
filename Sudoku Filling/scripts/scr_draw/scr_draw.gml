@@ -1,9 +1,29 @@
+/**
+ * Draws a rectangle with a specified coordinate.
+ * @param {real} _x1 - The x-coordinate of the top-left corner of the rectangle.
+ * @param {real} _y1 - The y-coordinate of the top-left corner of the rectangle.
+ * @param {real} _x2 - The x-coordinate of the bottom-right corner of the rectangle.
+ * @param {real} _y2 - The y-coordinate of the bottom-right corner of the rectangle.
+ * @param {real} _width - The width of the border of the rectangle.
+ * @returns {undefined}
+ */
 function draw_rectangle_width(_x1, _y1, _x2, _y2, _width) {
     for (i = - _width div 2; i <= _width div 2; i++) {
 		draw_rectangle(_x1 + i, _y1 + i, _x2 - i, _y2 - i, true);
 	}
 }
 
+/**
+ * Draws an extended grid with specified parameters.
+ * @param {real} _x - The x-coordinate of the center of the grid.
+ * @param {real} _y - The y-coordinate of the center of the grid.
+ * @param {real} _no_h - The number of horizontal rows in the grid.
+ * @param {real} _no_v - The number of vertical columns in the grid.
+ * @param {real} _cell_w - The width of each cell in the grid.
+ * @param {real} _out_w - The width of border of the outer rectangle (positive integer).
+ * @param {real} _in_w - The width of the inner grid lines (positive integer).
+ * @returns {array<real>} An array containing the top and left coordinates of the grid.
+ */
 function draw_grid_ext(_x, _y, _no_h, _no_v, _cell_w, _out_w, _in_w) {
 	var _top = _y - _no_h / 2 * _cell_w;
 	var _bottom = _y + _no_h / 2 * _cell_w;
@@ -61,4 +81,23 @@ function draw_grid_with_values(
 		}
 	}
 	return [_left, _top];
+}
+
+/**
+ * Draws a highlight rectangle on a grid.
+ * @param {array<real>} _grid_tl - The top-left coordinates of the grid.
+ * @param {array<real>} _cell_pos - The position of the cell within the grid (optional).
+ * @param {real} _cell_w - The width of each cell in the grid.
+ * @returns {undefined}
+ */
+function draw_highlight(_grid_tl, _cell_pos, _cell_w) {
+    if (_cell_pos != undefined) {
+        draw_rectangle(
+            _grid_tl[0] + _cell_pos[0] * _cell_w,
+            _grid_tl[1] + _cell_pos[1] * _cell_w,
+            _grid_tl[0] + (_cell_pos[0] + 1) * _cell_w,
+            _grid_tl[1] + (_cell_pos[1] + 1) * _cell_w,
+            false
+        );
+    }
 }

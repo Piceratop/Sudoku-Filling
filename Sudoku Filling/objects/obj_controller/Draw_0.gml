@@ -1,5 +1,4 @@
 // Board drawing
-draw_set_color(edge_color);
 board_top_left = draw_grid_with_values(
 	board_center[0],
 	board_center[1],
@@ -9,10 +8,11 @@ board_top_left = draw_grid_with_values(
 );
 
 // Numpad drawing
+
 numpad_top_left = draw_grid_with_values(
 	numpad_center[0],
 	numpad_center[1],
-	numpad_values,
+	availability_numpad,
 	numpad_cell_width,
 	5, 5, edge_color, cell_font, cell_font_color
 );
