@@ -12,12 +12,13 @@ function fill_in_value(_board, _pos, _value) {
 
 function create_status(_x, _y, _status, _cell_w) {
 	with (obj_status) {
-		if (status == "danger") {
+		if (status == "error" || status == _status) {
 			instance_destroy();
 		}
 	}
-	var _stat = instance_create_layer(_x, _y, "Status", obj_status);
-	_stat.status = _status;
-	_stat.image_xscale = _cell_w / 64;
-	_stat.image_yscale = _cell_w / 64;
+	var _stat = instance_create_layer(_x, _y, "Status", obj_status, {
+		status: _status,
+		image_xscale: _cell_w / 64,
+		image_yscale: _cell_w / 64
+	});
 }

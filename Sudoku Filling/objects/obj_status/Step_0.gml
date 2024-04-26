@@ -1,5 +1,13 @@
-alpha = (time_to_lived - time_lived) * (time_to_lived + time_lived) / power(time_to_lived, 2);
-time_lived += 1;
-if (time_lived >= time_to_lived) {
-	instance_destroy();
+switch(status) {
+	case "error":
+		image_index = 1;
+		image_alpha = (1 - time_lived / time_to_live) * (1 + time_lived / time_to_live);
+		time_lived++;
+		if (time_lived > time_to_live)
+			instance_destroy();
+		break;
+	case "selected":
+		image_index = 2;
+	default:
+		break;
 }
