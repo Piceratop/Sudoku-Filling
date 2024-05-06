@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"scr_position_check",
+  "%Name":"scr_board_drawing",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_position_check",
+  "name":"scr_board_drawing",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

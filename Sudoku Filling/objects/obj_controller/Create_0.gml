@@ -1,6 +1,7 @@
 // Board properties
 board_cell_width = 120;
 board_center = [350, room_height / 2];
+board_font = fnt_board_value;
 board_pos_current = undefined;
 board_size = 4;
 board_top_left = [0, 0];
@@ -62,7 +63,6 @@ _enter_pad.sprite_index = spr_numpad_enter;
 
 // Painting properties
 edge_color = c_black;
-cell_font = fnt_number;
 cell_font_color = c_black;
 highlight_color = make_color_rgb(101, 189, 222);
 draw_set_halign(fa_center);

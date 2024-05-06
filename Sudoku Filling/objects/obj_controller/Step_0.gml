@@ -6,9 +6,6 @@ if (mouse_check_button_pressed(mb_left)) {
 		board_top_left[0], board_top_left[1],
 		board_size, board_size, board_cell_width
 	);
-
-	
-
 	if (_grid_pos != undefined) {
 		var _p_x = board_top_left[0] + board_cell_width * (_grid_pos[0] + 0.5);
 		var _p_y = board_top_left[1] + board_cell_width * (_grid_pos[1] + 0.5);

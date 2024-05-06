@@ -65,7 +65,8 @@ function draw_grid_with_values(
 	for (i = 1; i < _no_v; i++) {
 		draw_line_width(_left + i * _cell_w, _top, _left + i * _cell_w, _bottom, _in_w);
 	}
-	
+	var _curr_color = draw_get_color();
+	var _curr_font = draw_get_font();
 	draw_set_font(_font);
 	draw_set_color(_font_color);
 	for (id_row = 0; id_row < _no_h; id_row++) {
@@ -80,6 +81,8 @@ function draw_grid_with_values(
 			}
 		}
 	}
+	draw_set_color(_curr_color);
+	draw_set_font(_curr_font);
 	return [_left, _top];
 }
 
