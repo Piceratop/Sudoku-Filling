@@ -1,5 +1,7 @@
-//// Handle mouse input
+var _curr_height = window_get_height();
+var _curr_width = window_get_width();
 
+// Handle mouse input
 if (mouse_check_button_pressed(mb_left)) {
 	var _grid_pos = position_in_grid(
 		mouse_x, mouse_y,

@@ -1,6 +1,6 @@
 // Board properties
-board_cell_width = 120;
-board_center = [350, room_height / 2];
+board_cell_width = 64;
+board_center = [board_cell_width * 2.5 , room_height / 2];
 board_font = fnt_board_value;
 board_pos_current = undefined;
 board_size = 4;
@@ -16,8 +16,8 @@ for (i = 0; i < board_size; i++) {
 max_input = 3;
 
 // Numpad properties
-numpad_cell_gap = 70;
-numpad_center = [room_width - 200, room_height / 2];
+numpad_cell_gap = sprite_get_width(spr_numpad) + 4;
+numpad_center = [room_width - numpad_cell_gap * 2.5, room_height / 2];
 numpad_current = undefined;
 numpad_size = [4, 3];
 numpad_values = [
@@ -27,7 +27,6 @@ numpad_values = [
 	[0, ".", undefined]
 ];
 
-// Gaming properties
 allowed_values = [1, 2, 3, 4];
 availability_numpad = [];
 for (i = 0; i < numpad_size[0]; i++) {
@@ -60,13 +59,6 @@ var _enter_pad = instance_create_layer(
 	}
 );
 _enter_pad.sprite_index = spr_numpad_enter;
-
-// Painting properties
-edge_color = c_black;
-cell_font_color = c_black;
-highlight_color = make_color_rgb(101, 189, 222);
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
 
 // Utility Functions
 function refresh() {
