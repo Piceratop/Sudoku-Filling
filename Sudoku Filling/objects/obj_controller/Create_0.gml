@@ -1,22 +1,34 @@
+// Customization
+bg_color = c_white;
+ctx_color = c_black;
+
 // Board properties
-board_cell_width = 64;
-board_center = [board_cell_width * 2.5 , room_height / 2];
-board_font = fnt_board_value;
+board_cell_gap = sprite_get_width(spr_board_cell) - 2;
+board_center = [board_cell_gap * 4 , room_height / 2];
 board_pos_current = undefined;
 board_size = 4;
 board_top_left = [0, 0];
 board_values = [];
 for (i = 0; i < board_size; i++) {
-	bv = [];
+	var _bv = [];
+	var _left = board_center[0] - (board_size - 1) / 2 * board_cell_gap;
+	var _top = board_center[1] - (board_size - 1) / 2 * board_cell_gap;
 	for (j = 0; j < board_size; j++) {
-		array_push(bv, undefined);
+		instance_create_layer(
+			_left + j * board_cell_gap,
+			_top + i * board_cell_gap,
+			"Board", obj_board_cell, {
+				position: [i, j],
+				value: undefined
+			}
+		)
+		array_push(_bv, undefined);
 	}
-	array_push(board_values, bv);
+	array_push(board_values, _bv);
 }
-max_input = 3;
 
 // Numpad properties
-numpad_cell_gap = sprite_get_width(spr_numpad) + 4;
+numpad_cell_gap = sprite_get_width(spr_numpad) + 3;
 numpad_center = [room_width - numpad_cell_gap * 2.5, room_height / 2];
 numpad_current = undefined;
 numpad_size = [4, 3];

@@ -1,5 +1,4 @@
-border_color = c_black;
-image_blend = border_color;
+image_blend = obj_controller.ctx_color;
 image_speed = 0;
 
 switch(value) {

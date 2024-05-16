@@ -19,7 +19,6 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
-    {"name":"fnt_board_value","order":2,"path":"fonts/fnt_board_value/fnt_board_value.yy",},
     {"name":"fnt_text","order":1,"path":"fonts/fnt_text/fnt_text.yy",},
     {"name":"obj_board_cell","order":3,"path":"objects/obj_board_cell/obj_board_cell.yy",},
     {"name":"obj_numpad","order":2,"path":"objects/obj_numpad/obj_numpad.yy",},

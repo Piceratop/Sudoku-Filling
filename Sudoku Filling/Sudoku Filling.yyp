@@ -36,7 +36,6 @@
   },
   "name":"Sudoku Filling",
   "resources":[
-    {"id":{"name":"fnt_board_value","path":"fonts/fnt_board_value/fnt_board_value.yy",},},
     {"id":{"name":"fnt_text","path":"fonts/fnt_text/fnt_text.yy",},},
     {"id":{"name":"obj_board_cell","path":"objects/obj_board_cell/obj_board_cell.yy",},},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
