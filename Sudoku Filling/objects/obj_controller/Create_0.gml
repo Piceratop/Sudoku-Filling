@@ -1,11 +1,11 @@
 // Customization
 bg_color = c_white;
-ctx_color = c_black;
+ctx_color = c_black
 
 // Board properties
-board_cell_gap = sprite_get_width(spr_board_cell) - 2;
+board_cell_gap = sprite_get_width(spr_board_cell) + 4;
 board_center = [board_cell_gap * 4 , room_height / 2];
-board_pos_current = undefined;
+board_current = undefined;
 board_size = 4;
 board_top_left = [0, 0];
 board_values = [];
@@ -28,7 +28,7 @@ for (i = 0; i < board_size; i++) {
 }
 
 // Numpad properties
-numpad_cell_gap = sprite_get_width(spr_numpad) + 3;
+numpad_cell_gap = sprite_get_width(spr_numpad) + 4;
 numpad_center = [room_width - numpad_cell_gap * 2.5, room_height / 2];
 numpad_current = undefined;
 numpad_size = [4, 3];
@@ -75,7 +75,7 @@ _enter_pad.sprite_index = spr_numpad_enter;
 // Utility Functions
 function refresh() {
 	instance_destroy(obj_status);
-	board_pos_current = undefined;
+	board_current = undefined;
 	numpad_current = undefined;
 }
 

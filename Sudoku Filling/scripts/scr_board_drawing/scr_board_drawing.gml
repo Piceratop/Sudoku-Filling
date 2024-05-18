@@ -9,3 +9,12 @@ function draw_highlight(_grid_tl, _cell_pos, _cell_w) {
         );
     }
 }
+
+function draw_test_text(_x, _y, _text) {
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	var _c_color = draw_get_color();
+	draw_set_color(obj_controller.ctx_color);
+	draw_text(_x, _y, _text);
+	draw_set_color(_c_color);
+}

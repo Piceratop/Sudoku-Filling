@@ -46,6 +46,7 @@
     {"id":{"name":"scr_board_drawing","path":"scripts/scr_board_drawing/scr_board_drawing.yy",},},
     {"id":{"name":"scr_board_modification","path":"scripts/scr_board_modification/scr_board_modification.yy",},},
     {"id":{"name":"spr_board_cell","path":"sprites/spr_board_cell/spr_board_cell.yy",},},
+    {"id":{"name":"spr_number","path":"sprites/spr_number/spr_number.yy",},},
     {"id":{"name":"spr_numpad_enter","path":"sprites/spr_numpad_enter/spr_numpad_enter.yy",},},
     {"id":{"name":"spr_numpad","path":"sprites/spr_numpad/spr_numpad.yy",},},
     {"id":{"name":"spr_status","path":"sprites/spr_status/spr_status.yy",},},

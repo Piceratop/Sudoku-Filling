@@ -6,7 +6,8 @@ switch(status) {
 		if (time_lived > time_to_live)
 			instance_destroy();
 		break;
-	case "selected":
+	case "board_select":
+	case "np_select":
 		image_index = 2;
 	default:
 		break;
