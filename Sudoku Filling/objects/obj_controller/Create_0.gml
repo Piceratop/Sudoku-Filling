@@ -36,7 +36,7 @@ numpad_values = [
 	[7, 8, 9],
 	[4, 5, 6],
 	[1, 2, 3],
-	[0, ".", undefined]
+	[0, ".", "\u232b"]
 ];
 
 allowed_values = [1, 2, 3, 4];
