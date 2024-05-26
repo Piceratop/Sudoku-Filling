@@ -18,3 +18,8 @@ function draw_test_text(_x, _y, _text) {
 	draw_text(_x, _y, _text);
 	draw_set_color(_c_color);
 }
+
+function set_center_draw() {
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+}

@@ -1,4 +1,16 @@
+function refresh() {
+	instance_destroy(obj_status);
+	obj_controller.board_current = {
+		position: [undefined, undefined],
+		value: undefined
+	};
+	obj_controller.numpad_current = undefined;
+}
+
 switch (value) {
+	case undefined:
+		create_status(x, y, "error", sprite_width, sprite_height);
+		break;
 	case "Enter":
 		var _bp = obj_controller.board_current.position;
 		var _bv = obj_controller.board_values;
@@ -7,13 +19,16 @@ switch (value) {
 			create_status(x, y, "error", sprite_width, sprite_height);
 		} else {
 			fill_in_value(_bv, _bp, _nc);
-			obj_controller.refresh();
+			refresh();
+			create_status(x, y, "highlight", sprite_width, sprite_height);
 		}
 		break;
-	case undefined:
-		create_status(x, y, "error", sprite_width, sprite_height);
+	case "\u232b":
+		refresh();
+		create_status(x, y, "highlight", sprite_width, sprite_height);
 		break;
 	default:
 		obj_controller.numpad_current = value;
 		create_status(x, y, "np_select", sprite_width, sprite_height);
+		break;
 }

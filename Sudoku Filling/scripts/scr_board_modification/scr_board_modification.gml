@@ -1,13 +1,13 @@
 function fill_in_value(_board, _pos, _value) {
-	
 	switch (_value) {
-		case "\u232b":
-			_board[_pos[0]][_pos[1]] = undefined;
-			break;
-		case ".":
-			break;
 		default:
-			_board[_pos[0]][_pos[1]] = _value;	
+			_board[_pos[0]][_pos[1]] = _value;
+			with(obj_board_cell) {
+				if (position == _pos) {
+					value = _value;
+				}
+			}
+			break;
 	}
 }
 

@@ -1,22 +1,30 @@
 // Customization
 bg_color = c_white;
-ctx_color = c_black
+ctx_color = c_black;
+padding = 20;
+fnt_big_number = font_add_sprite_ext(spr_fnt_big, "0123456789", false, 0);
+
+// Player Tag Properties
+instance_create_layer(padding, padding, "Numpad", obj_player_tag, {image_index: 0});
 
 // Board properties
 board_cell_gap = sprite_get_width(spr_board_cell) + 4;
-board_center = [board_cell_gap * 4 , room_height / 2];
-board_current = undefined;
+board_current = {
+	position: [undefined, undefined],
+	value: undefined
+};
 board_size = 4;
-board_top_left = [0, 0];
+board_top_left = [
+	padding + sprite_get_width(spr_board_cell) / 2,
+	room_height / 2 - (board_size - 1) / 2 * board_cell_gap
+];
 board_values = [];
 for (i = 0; i < board_size; i++) {
 	var _bv = [];
-	var _left = board_center[0] - (board_size - 1) / 2 * board_cell_gap;
-	var _top = board_center[1] - (board_size - 1) / 2 * board_cell_gap;
 	for (j = 0; j < board_size; j++) {
 		instance_create_layer(
-			_left + j * board_cell_gap,
-			_top + i * board_cell_gap,
+			board_top_left[0] + j * board_cell_gap,
+			board_top_left[1] + i * board_cell_gap,
 			"Board", obj_board_cell, {
 				position: [i, j],
 				value: undefined
@@ -72,11 +80,5 @@ var _enter_pad = instance_create_layer(
 );
 _enter_pad.sprite_index = spr_numpad_enter;
 
-// Utility Functions
-function refresh() {
-	instance_destroy(obj_status);
-	board_current = undefined;
-	numpad_current = undefined;
-}
-
 // Debugging
+show_debug_message($"obj_controller: {typeof(true)}");

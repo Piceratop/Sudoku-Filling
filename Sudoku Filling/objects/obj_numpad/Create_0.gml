@@ -7,6 +7,7 @@ switch(value) {
 		image_index = 0;
 		break;
 	case "\u232b":
+		image_index = 11;
 		break;
 	default:
 		image_index = value;

@@ -7,6 +7,13 @@ function position_in_grid(_p_x, _p_y, _left_grid, _top_grid, _no_h, _no_v, _cell
 	return [_grid_pos_x, _grid_pos_y];
 }
 
+/**
+ * Check if a value is valid on the board.
+ * @param {Array} _board_pos - The position on the board (array of two elements).
+ * @param {any} _value - The value to check.
+ * @param {Array} _board - The game board (2D array).
+ * @returns {bool} - `true` if the value is valid, otherwise `false`.
+ */
 function check_valid(_board_pos, _value, _board) {
 	if (_board_pos == undefined || _value == undefined)
 		return false;
