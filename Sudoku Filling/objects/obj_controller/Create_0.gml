@@ -2,6 +2,7 @@
 bg_color = c_white;
 ctx_color = c_black;
 padding = 20;
+fnt_text = font_add_sprite_ext(spr_fnt, "0123456789abcde", false, 1);
 fnt_big_number = font_add_sprite_ext(spr_fnt_big, "0123456789", false, 0);
 
 // Player Tag Properties
