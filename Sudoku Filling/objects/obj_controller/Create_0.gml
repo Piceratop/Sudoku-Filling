@@ -2,11 +2,24 @@
 bg_color = c_white;
 ctx_color = c_black;
 padding = 20;
-fnt_text = font_add_sprite_ext(spr_fnt, "0123456789abcdefghijklmnopqrstuvwxyz", true, 2);
+fnt_text = font_add_sprite_ext(spr_fnt, "0123456789'OPabcdefghijklmnopqrstuvwxyz", true, 2);
 fnt_big_number = font_add_sprite_ext(spr_fnt_big, "0123456789", true, 2);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+draw_set_color(ctx_color);
+draw_set_font(fnt_text);
 
 // Player Tag Properties
-instance_create_layer(padding, padding, "Numpad", obj_player_tag, {image_index: 0});
+instance_create_layer(
+	2 * padding,
+	padding + sprite_get_height(spr_player_tag_border) / 2,
+	"Numpad",
+	obj_player_tag,
+	{
+		image_index: 0,
+		image_blend: ctx_color
+	}
+);
 
 // Board properties
 board_cell_gap = sprite_get_width(spr_board_cell) + 4;
@@ -16,7 +29,7 @@ board_current = {
 };
 board_size = 4;
 board_top_left = [
-	padding + sprite_get_width(spr_board_cell) / 2,
+	2 * padding + sprite_get_width(spr_board_cell) / 2,
 	room_height / 2 - (board_size - 1) / 2 * board_cell_gap
 ];
 board_values = [];
@@ -82,4 +95,3 @@ var _enter_pad = instance_create_layer(
 _enter_pad.sprite_index = spr_numpad_enter;
 
 // Debugging
-show_debug_message($"obj_controller: {typeof(true)}");

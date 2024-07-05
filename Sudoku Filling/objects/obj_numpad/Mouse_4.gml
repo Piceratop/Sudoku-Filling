@@ -17,11 +17,11 @@ switch (value) {
 		var _nc = obj_controller.numpad_current;
 		if (!check_valid(_bp, _nc, _bv)) {
 			create_status(x, y, "error", sprite_width, sprite_height);
-		} else {
-			fill_in_value(_bv, _bp, _nc);
-			refresh();
-			create_status(x, y, "highlight", sprite_width, sprite_height);
+			break;
 		}
+		fill_in_value(_bv, _bp, _nc);
+		refresh();
+		create_status(x, y, "highlight", sprite_width, sprite_height);
 		break;
 	case "\u232b":
 		refresh();

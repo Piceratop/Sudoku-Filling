@@ -10,16 +10,11 @@ function draw_highlight(_grid_tl, _cell_pos, _cell_w) {
     }
 }
 
-function draw_test_text(_x, _y, _text) {
-	draw_set_halign(fa_center);
-	draw_set_valign(fa_middle);
-	var _c_color = draw_get_color();
-	draw_set_color(obj_controller.ctx_color);
-	draw_text(_x, _y, _text);
-	draw_set_color(_c_color);
-}
-
-function set_center_draw() {
-	draw_set_halign(fa_center);
-	draw_set_valign(fa_middle);
+function setup_draw(_halign, _valign, _color) {
+	_halign = is_undefined(_halign) ? fa_center : _halign;
+	_valign = is_undefined(_valign) ? fa_middle : _valign;
+	_color = is_undefined(_color) ? obj_controller.ctx_color : _color;
+	draw_set_halign(_halign);
+	draw_set_valign(_valign);
+	draw_set_color(_color);
 }
