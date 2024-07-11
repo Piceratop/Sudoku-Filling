@@ -1,25 +1,11 @@
 // Customization
 bg_color = c_white;
 ctx_color = c_black;
-padding = 20;
 fnt_text = font_add_sprite_ext(spr_fnt, "0123456789'OPabcdefghijklmnopqrstuvwxyz", true, 2);
-fnt_big_number = font_add_sprite_ext(spr_fnt_big, "0123456789", true, 2);
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 draw_set_color(ctx_color);
 draw_set_font(fnt_text);
-
-// Player Tag Properties
-instance_create_layer(
-	2 * padding,
-	padding + sprite_get_height(spr_player_tag_border) / 2,
-	"Numpad",
-	obj_player_tag,
-	{
-		image_index: 0,
-		image_blend: ctx_color
-	}
-);
 
 // Board properties
 board_cell_gap = sprite_get_width(spr_board_cell) + 4;
@@ -29,9 +15,10 @@ board_current = {
 };
 board_size = 4;
 board_top_left = [
-	2 * padding + sprite_get_width(spr_board_cell) / 2,
+	50 + sprite_get_width(spr_board_cell) / 2,
 	room_height / 2 - (board_size - 1) / 2 * board_cell_gap
 ];
+
 board_values = [];
 for (i = 0; i < board_size; i++) {
 	var _bv = [];
@@ -48,6 +35,34 @@ for (i = 0; i < board_size; i++) {
 	}
 	array_push(board_values, _bv);
 }
+
+function create_board_edge(_pos_x, _pos_y, _rotation) {
+	return instance_create_layer(_pos_x, _pos_y, "Board", obj_board_edge, {image_angle: _rotation});
+}
+edge_top = create_board_edge(
+	board_top_left[0] + board_cell_gap * (board_size - 1) / 2,
+	board_top_left[1] - board_cell_gap / 2 - 6,
+	0
+);
+edge_left = create_board_edge(board_top_left[0] - board_cell_gap / 2 - 6, room_height / 2, 90);
+edge_bottom = create_board_edge(
+	board_top_left[0] + board_cell_gap * (board_size - 1) / 2,
+	board_top_left[1] + board_cell_gap * (board_size - 0.5) + 6,
+	180
+);
+edge_right = create_board_edge(
+	board_top_left[0] + board_cell_gap * (board_size - 0.5) + 6,
+	room_height / 2,
+	270
+);
+
+function create_board_corner(_pos_x, _pos_y) {
+	return instance_create_layer(_pos_x, _pos_y, "Board", obj_board_corner);
+}
+create_board_corner(edge_left.x, edge_top.y);
+create_board_corner(edge_left.x, edge_bottom.y);
+create_board_corner(edge_right.x, edge_bottom.y);
+create_board_corner(edge_right.x, edge_top.y);
 
 // Numpad properties
 numpad_cell_gap = sprite_get_width(spr_numpad) + 4;

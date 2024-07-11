@@ -10,8 +10,8 @@
   "name":"obj_board_cell",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Board",
+    "path":"folders/Objects/Board.yy",
   },
   "parentObjectId":null,
   "persistent":false,
