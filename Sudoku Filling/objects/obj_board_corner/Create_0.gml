@@ -1,1 +1,0 @@
-image_blend = obj_controller.ctx_color;
