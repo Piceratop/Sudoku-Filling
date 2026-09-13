@@ -1,3 +1,7 @@
+// Soft-drop timer
+
+if (is_locked) exit;
+
 if (!place_meeting(x, y + CELL_SIZE, obj_border)) {
 	y += CELL_SIZE;
 }
