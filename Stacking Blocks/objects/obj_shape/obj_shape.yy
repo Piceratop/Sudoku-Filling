@@ -1,17 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_border",
+  "%Name":"obj_shape",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_border",
+  "name":"obj_shape",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_block",
+    "path":"objects/obj_block/obj_block.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_border",
-    "path":"sprites/spr_border/spr_border.yy",
+    "name":"spr_O4",
+    "path":"sprites/spr_O4/spr_O4.yy",
   },
   "spriteMaskId":null,
   "visible":true,
